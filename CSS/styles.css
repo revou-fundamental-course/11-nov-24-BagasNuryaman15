@@ -12,8 +12,11 @@
     --clr-primary: #2887ff;
     --clr-text: #101010;
     --clr-text-secondery: #404040;
-    --clr-bg: #ffffff;
-    --size-avatar: 40px;
+    --clr-white: #ffffff;
+    --clr-cool-white: #F5F8FA;
+    --clr-offwhite: #F8F5F2;
+    --clr-ghost-white: #f8f8ff;
+    --clr-indonesia: #FF0000;
 }
 
 /* Style Universal */
@@ -43,6 +46,7 @@ body .container {
     height: 3.7rem;
     padding: 0 9%;
     margin-top: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 /* Center */
@@ -103,7 +107,6 @@ nav .title .color {
 #hero-section {
     display: flex;
     justify-content: center;
-    align-items: center;
     position: relative;
     background-image: url('../assets/Headerbg.webp');
     object-fit: cover;
@@ -114,62 +117,29 @@ nav .title .color {
     margin: 0 auto;
     border-radius: 30px;
     height: 85vh;
-    color: #fff;
 }
 
 /* Title header */
-.main-title {
-    max-width: 600px;
-    text-align: center;
+section .main-title {
+    max-width: 450px;
+    text-align: left;
     text-transform: capitalize;
-   color: var(--clr-bg);
-   font: bold 2.7rem var(--font-title);
-}
-
-.container-review {
+    color: var(--clr-cool-white);
+    font: bold 2.7rem var(--font-title);
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    bottom: 20px;
-    right: 20px;
-    width: 500px;
+    top: 4.3rem;
+    left: 3.7rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
 }
 
-.profiles {
-    display: flex;
-    background-color: #fff;
-    padding: 1rem .5rem;
-    border-radius: 10px;
+section .main-title .in-color {
+    color: var(--clr-indonesia);
+    opacity: 0.8;
+    
 }
 
-.container-review a {
-    position: relative;
-    width: 89%;
-    align-self: end;
-    background-color: #fff;
-    border-radius: 0 10px 0 0;
-    height: 70px;
-    padding: 6px 12px;
-}
+section .main-title .in-color {
 
-.container-review a::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 100%;
-    left: -10px;
-    bottom: 0;
-    border-radius: 10px 0 10px 0;
-    background-color: #fff;
-}
-
-
-
-.avatar {
-    width: var(--size-avatar);
-    height: var(--size-avatar);
-    background-color: red;
-    border: 2px solid white;
-    border-radius: 100%;
 }
 
