@@ -1,25 +1,28 @@
-/* Add Google Fonts to the page */
+/* Space For Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-/* Root */
-:root {
-    /* Typograpy */
-    --font-primary: 'Poppins', sans-serif;
-    --font-title: "IBM Plex Sans", sans-serif;
-    --font-weight: 700;
-    /* Color */
-    --clr-primary: #2887ff;
-    --clr-text: #101010;
-    --clr-text-secondery: #404040;
-    --clr-white: #ffffff;
-    --clr-cool-white: #F5F8FA;
-    --clr-offwhite: #F8F5F2;
-    --clr-ghost-white: #f8f8ff;
-    --clr-indonesia: #FF0000;
-}
+/* Root for easy */
 
-/* Style Universal */
+:root {
+    /* Tyhpograpy */
+    --primary-font-style: "Poppins", sans-serif;
+    --secondery-font-style: "IBM Plex Sans", sans-serif;
+    /* Font Weight */
+    --font-weight-primary: 500;
+    --font-weight-secondery: 700;
+    --font-title: 800;
+    --font-title-semi-bold: 900;
+    --font-title-bold: bold;
+
+    /* Color */
+    --primay-clr: #f4f4f4;
+    --secondery-clr: #1a1e18;
+    --bg-clr: #ffffff;
+    --bg-navbar-clr: #0f0f0f;
+    --text-clr-nav: #228b22;
+    --primary-clr-title: #4c8c2a;
+}
 
 * {
     padding: 0;
@@ -27,119 +30,83 @@
     box-sizing: border-box;
 }
 
-body, html {
-    scroll-behavior: smooth ;
-    background-color: var(--clr-bg);
+body,
+html {
+    background-color: var(--bg-clr);
+    scroll-behavior: smooth;
+    font-family: var(--primary-font-style);
 }
 
 a {
     text-decoration: none;
-    color: var(--clr-text);
 }
 
-/* Navigation Bar */
-body .container {
+ul li {
+    list-style: none;
+}
+
+/* Navigation */
+
+body nav.container {
+    position: fixed;
+    isolation: isolate;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Group Logo */
+nav .logo_containaer {
+    display: flex;
+    padding: 1rem 1.5rem;
+   background-color: var(--bg-navbar-clr);
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .nav_logo .logo {
+    color: var(--bg-clr);
+    font: 700 1.7rem var(--secondery-font-style);
+}
+
+.nav_logo sup i {
+    font-size: 0.8rem;
+}
+
+.nav_logo .logo .title_color {
+    color: #4c8c2a;
+    font-size: 1.8rem;
+}
+
+nav .nav_menu_btn {
+    font-size: 1.7rem;
+    color: var(--bg-clr);
+    cursor: pointer;
+}
+
+/* Group Link */
+
+nav .nav_link {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1.7rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 3.7rem;
-    padding: 0 9%;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-/* Center */
-
-nav .link {
-    display: inline-flex;
-    gap: 7.7rem;
-    position: relative;
-    font: 400 1rem var(--font-primary);
-    z-index: 1;
-}
-
-nav .link a {
-    color: var(--clr-text-secondery);
-    border-bottom: 1px solid transparent;
-    position: relative;
-    width: max-content;
-   transition: all .4s ease-in-out;
-}
-
-nav .link a:hover {
-    color: var(--clr-text);
-}
-
-nav .link a::before {
-  content: '';
-  position: absolute;
-  bottom: -.4rem;
-  background-color: var(--clr-primary);
-  left: 50%;
-  right: 50%;
-  transform: translateX(-50%) ;
-  width: 0%;
-  height: 1px;
-  transition: all .5s ease-in-out;
-  z-index: 0;
-}
-
-nav .link a:hover::before{
-    width: 100%;
-    transform: translateX(0%);
-    left: 0%;
-    right: 0%;
-}
-/* Left */
-
-nav a.title {
-    font: 500 1.5rem var(--font-title);
-}
-
-nav .title .color {
-   font: var(--font-weight) 1.5rem var(--font-title);
-   color: var(--clr-primary);
-}
-
-/* Background Header */
-
-#hero-section {
-    display: flex;
     justify-content: center;
-    position: relative;
-    background-image: url('../assets/Headerbg.webp');
-    object-fit: cover;
-    background-position: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: calc(100% - 40px);
-    margin: 0 auto;
-    border-radius: 30px;
-    height: 85vh;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--text-clr-nav);
+    z-index: -1;
+    transition: transform .5s;
+    transform: translateY(0%);
 }
 
-/* Title header */
-section .main-title {
-    max-width: 450px;
-    text-align: left;
-    text-transform: capitalize;
-    color: var(--clr-cool-white);
-    font: bold 2.7rem var(--font-title);
-    position: absolute;
-    top: 4.3rem;
-    left: 3.7rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
+.nav_link.open {
+    transform: translateY(100%);
 }
 
-section .main-title .in-color {
-    color: var(--clr-indonesia);
-    opacity: 0.8;
-    
-}
-
-section .main-title .in-color {
+@media screen and (max-width: 767px) {
 
 }
-
