@@ -13,6 +13,7 @@
     --clr-text: #101010;
     --clr-text-secondery: #404040;
     --clr-bg: #ffffff;
+    --size-avatar: 40px;
 }
 
 /* Style Universal */
@@ -21,8 +22,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    outline: none;
-    border: none;
 }
 
 body, html {
@@ -43,18 +42,17 @@ body .container {
     width: 100%;
     height: 3.7rem;
     padding: 0 9%;
-    position: fixed;
-    top: 0; left: 0;
+    margin-top: 0.5rem;
 }
 
 /* Center */
 
 nav .link {
-    display: flex;
-    gap: 8rem;
-   
+    display: inline-flex;
+    gap: 7.7rem;
     position: relative;
     font: 400 1rem var(--font-primary);
+    z-index: 1;
 }
 
 nav .link a {
@@ -80,6 +78,7 @@ nav .link a::before {
   width: 0%;
   height: 1px;
   transition: all .5s ease-in-out;
+  z-index: 0;
 }
 
 nav .link a:hover::before{
@@ -99,20 +98,78 @@ nav .title .color {
    color: var(--clr-primary);
 }
 
-/* Right */
+/* Background Header */
 
-nav .logo-right {
-    background-color: var(--clr-text);
-    width: 5.5rem;
-    height: 2rem;
+#hero-section {
     display: flex;
-    align-items: center;
     justify-content: center;
-    border-radius: 1rem ;
+    align-items: center;
+    position: relative;
+    background-image: url('../assets/Headerbg.webp');
+    object-fit: cover;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    border-radius: 30px;
+    height: 85vh;
+    color: #fff;
 }
-nav .logo-right button {
-    border: none;
-    background: none;
-    font: .8rem var(--font-primary);
-    color: var(--clr-bg);
+
+/* Title header */
+.main-title {
+    max-width: 600px;
+    text-align: center;
+    text-transform: capitalize;
+   color: var(--clr-bg);
+   font: bold 2.7rem var(--font-title);
 }
+
+.container-review {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 20px;
+    right: 20px;
+    width: 500px;
+}
+
+.profiles {
+    display: flex;
+    background-color: #fff;
+    padding: 1rem .5rem;
+    border-radius: 10px;
+}
+
+.container-review a {
+    position: relative;
+    width: 89%;
+    align-self: end;
+    background-color: #fff;
+    border-radius: 0 10px 0 0;
+    height: 70px;
+    padding: 6px 12px;
+}
+
+.container-review a::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    left: -10px;
+    bottom: 0;
+    border-radius: 10px 0 10px 0;
+    background-color: #fff;
+}
+
+
+
+.avatar {
+    width: var(--size-avatar);
+    height: var(--size-avatar);
+    background-color: red;
+    border: 2px solid white;
+    border-radius: 100%;
+}
+
