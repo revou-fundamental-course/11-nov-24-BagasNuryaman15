@@ -6,22 +6,22 @@
 
 :root {
     /* Tyhpograpy */
-    --primary-font-style: "Poppins", sans-serif;
-    --secondery-font-style: "IBM Plex Sans", sans-serif;
+    --primary-fs: "Poppins", sans-serif;
+    --secondery-fs: "IBM Plex Sans", sans-serif;
     /* Font Weight */
-    --font-weight-primary: 500;
-    --font-weight-secondery: 700;
-    --font-title: 800;
-    --font-title-semi-bold: 900;
-    --font-title-bold: bold;
+    --fw-500: 500;
+    --fw-700: 700;
+    --fw-800: 800;
+    --fw-900: 900;
+    --fw-bold: bold;
 
     /* Color */
     --primay-clr: #f4f4f4;
     --secondery-clr: #1a1e18;
     --bg-clr: #ffffff;
     --bg-navbar-clr: #0f0f0f;
-    --text-clr-nav: #228b22;
-    --primary-clr-title: #4c8c2a;
+    --text-clr-: #228b22;
+    --secondery-text-clr: #4c8c2a;
 }
 
 * {
@@ -45,68 +45,264 @@ ul li {
     list-style: none;
 }
 
-/* Navigation */
-
-body nav.container {
-    position: fixed;
-    isolation: isolate;
-    top: 0;
+/*---------- Reusable CSS------------ */
+.container {
+    max-width: 1400px;
+    margin-inline: 2rem ;
+}
+/*---------------Navigation Bar---------- */
+/* ----------Header and logo------------- */
+header.header {
     width: 100%;
-    z-index: 10;
+    background-color: var(--bg-navbar-clr);
 }
 
-/* Group Logo */
-nav .logo_containaer {
+header nav.nav {
+    position: relative;
+    height: 4rem;
     display: flex;
-    padding: 1rem 1.5rem;
-   background-color: var(--bg-navbar-clr);
     justify-content: space-between;
     align-items: center;
 }
 
-nav .nav_logo .logo {
+nav .logo {
     color: var(--bg-clr);
-    font: 700 1.7rem var(--secondery-font-style);
+    font: 700 1.2rem var(--secondery-fs);
 }
 
-.nav_logo sup i {
-    font-size: 0.8rem;
+nav .logo i {
+    font-size: .7rem;
 }
 
-.nav_logo .logo .title_color {
-    color: #4c8c2a;
-    font-size: 1.8rem;
+nav .logo span {
+    color: var(--text-clr-);
+    font: bold 1.4rem var(--primary-fs);
 }
 
-nav .nav_menu_btn {
-    font-size: 1.7rem;
+/* --------------Navigation group btn------------- */
+.btn_close,
+.btn_toggle {
     color: var(--bg-clr);
+    display: flex;
+    font-size: 1.3rem;
     cursor: pointer;
 }
 
-/* Group Link */
+/* -------------Navigation Bar Group Link-----------*/
+.nav_menu {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background-color: var(--bg-navbar-clr);
+    width: 100%;
+    height: 100%;
+    padding: 6rem 3.5rem 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: left .4s;
+    z-index: 10;
+}
 
-nav .nav_link {
+.nav_items {
+    transform: translatex(-9.5rem);
+    opacity: 0;
+    transition: transform .4s ease-out, opacity .4s;
+}
+
+.nav_items:nth-child(1) {
+    transition-delay: .1s;
+}
+.nav_items:nth-child(2) {
+    transition-delay: .2s;
+}
+.nav_items:nth-child(3) {
+    transition-delay: .3s;
+}
+
+header div .nav_list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+}
+
+header .nav_link {
+    position: relative;
+    color: var(--bg-clr);
+    font: var(--fw-500) 1.1rem var(--secondery-fs);
+    display: inline-flex;
+    align-items: center;
+    transition: opacity .4s;
+}
+
+header .nav_link i {
+    font-size: 1.1rem;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s, visibility .4s;
+}
+
+header .nav_link span {
+    position: relative;
+    transition: margin .4s;
+}
+
+.nav_link span::after {
+    content: '';
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -.28rem;
+    width: 0%;
+    height: 2px;
+    background-color: var(--bg-clr);
+    transition: width .4s ease-out;
+}
+
+/* --------------Animation Group Navbar link----------- */
+.nav_link:hover span {
+    margin-left: 1.4rem;
+}
+
+.nav_link:hover i {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav_link:hover span::after {
     width: 100%;
-    padding: 1.7rem;
+}
+
+.nav_list:has(.nav_link:hover) .nav_link:not(:hover) {
+    opacity: .3;
+}
+
+/* -----------Btn Group------------ */
+div.btn_close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+/* ---------For Show Menu Js----------- */
+.show-menu {
+    left: 0;
+}
+
+.show-menu .nav_items {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+/* -----------Main Header---------- */ 
+main {
+    font-family: var(--primary-fs);
+}
+
+/* ------------Header Title---------  */
+
+section .title-wrap {
+    width: 100%;
+    height: max-content;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     flex-direction: column;
-    gap: 2rem;
-    background-color: var(--text-clr-nav);
-    z-index: -1;
-    transition: transform .5s;
-    transform: translateY(0%);
+    align-items: center;
+    gap: .5rem;
+    margin: 7rem auto;
 }
 
-.nav_link.open {
-    transform: translateY(100%);
+section .title-wrap .title {
+    color: var(--text-clr-);
+    font: bold 1.6rem var(--primary-fs);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-@media screen and (max-width: 767px) {
+section .title-wrap .greating {
+    width: 80%;
+    font-size: 1.1rem;
+    color: var(--bg-navbar-clr);
+    opacity: .6;
+}
 
+/* ----------Main Features And Contact -------------*/
+main section.features {
+    max-width: 640px;
+    margin-inline: 1.5rem;
+}
+
+section.features .fcontainer {
+    display: flex;
+    flex-direction: column;
+}
+
+section.features figure img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6) ;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section.features figure q {
+    opacity: .7;
+    text-transform: capitalize;
+}
+
+/* ---------Profile and Features----------- */
+
+.body_card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 1rem 0;
+}
+figure.author {
+    flex-shrink: 0;
+}
+section .fcontainer .author .profile_author{
+    width: 3rem;
+    height: 3rem;
+    height: max-content;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author_description {
+    flex-direction: column;
+}
+
+.author_description .author_name {
+    font-size: .94rem;
+    margin: 0;
+}
+
+.author_label {
+}
+
+
+
+
+
+
+
+
+/* Responsive Design For Dekstop And Tablet */
+@media screen and (min-width: 640px) {
+    .container {
+        margin-inline: auto ;
+    }
+
+    .nav {
+        height: calc(4rem + 1rem);
+    }
+
+    .btn_toggle,
+    .btn_close {
+        display: none;
+    }
 }

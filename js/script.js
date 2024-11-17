@@ -1,26 +1,18 @@
-  // Ambil elemen tombol menu dan daftar tautan
-  const menuBtn = document.getElementById('menu-btn');
-  const navLink = document.getElementById('nav-link');
-  const icon = menuBtn.querySelector('i');
+// Variable Selector
+const navMenu = document.getElementById('nav-menu');
+const btnToggle = document.getElementById('btn-toggle');
+const btnClose = document.getElementById('btn-close');
 
-  // Tambahkan event listener untuk klik pada tombol menu
-  menuBtn.addEventListener('click', () => {
-      // Toggle class 'open' untuk menampilkan atau menyembunyikan menu
-    navLink.classList.toggle('open');
-       // Toggle ikon menu antara hamburger dan silang
-    icon.classList.toggle('bx-menu');
-    icon.classList.toggle('bx-x'); // Ganti dengan ikon silang
-  });
+// Menu Show
+if (btnToggle) {
+  btnToggle.addEventListener('click', () => {
+    navMenu.classList.add('show-menu')
+  })
 
-   // Ambil semua item menu
-   const menuItems = document.querySelectorAll('.menu-item');
-
-   // Tambahkan event listener untuk setiap item menu
-   menuItems.forEach(item => {
-       item.addEventListener('click', (e) => {
-           // Mencegah perilaku default tautan
-           e.preventDefault();
-
-           // Hapus kelas 'active' dari semua item
-       })
-})
+// Menu Hidden
+if (btnClose) {
+  btnClose.addEventListener('click', () =>{
+    navMenu.classList.remove('show-menu')
+  })
+}
+}
