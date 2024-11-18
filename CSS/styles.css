@@ -44,12 +44,6 @@ a {
 ul li {
     list-style: none;
 }
-
-/*---------- Reusable CSS------------ */
-.container {
-    max-width: 1400px;
-    margin-inline: 2rem ;
-}
 /*---------------Navigation Bar---------- */
 /* ----------Header and logo------------- */
 header.header {
@@ -67,6 +61,7 @@ header nav.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-inline: 2rem ;
 }
 
 nav .logo {
@@ -233,7 +228,7 @@ section .title-wrap .greating {
 
 /* ----------Main Features And Contact -------------*/
 main section.features {
-    max-width: 640px;
+    max-width: 768px;
     margin-inline: 1.5rem;
 }
 
@@ -339,12 +334,11 @@ section .ol_wrapper {
     list-style: none;
     gap: 1.7rem;
     text-align: center;
-    margin-bottom: 20rem;
     position: relative;
 }
 
 section .ol_wrapper:nth-child(1) {
-    flex: 1;
+    flex: 1 ;
 }
 section .ol_wrapper:nth-child(2) {
     flex: 1;
@@ -372,10 +366,125 @@ section .ol_wrapper li.li_dua{
     color: var(--bg-clr);
 }
 
+/* ----------------Our Packages---------------- */
+
+main section.package_container {
+    margin-top: 10rem;
+}
+
+
+main .package_container h3.title_package {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--text-clr-);
+    margin: 4rem auto; 
+}
+
+.package_container .card_container {
+    display: grid;
+    place-items: center;
+    margin-inline: 1.5rem;
+}
+
+/* --------------Image Settins----------- */
+
+.card_container article {
+    display: grid;
+    gap: 2rem;
+    place-items: center;
+    position: relative;
+}
+
+.card_container article img {
+    width: 80%;
+    height: 90%;
+    border-radius: 1.5rem;
+    object-fit: cover;
+    overflow: hidden;
+    background-size: cover;
+}
+
+/* -------------Card title------------- */
+
+.card_container article .bg_card_title {
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 2.5rem;
+    left: 4rem;
+    backdrop-filter: blur(3px);
+    border-radius: 1rem;
+    border: 1px solid var(--bg-clr);
+    transition: background-color .4s ease-in-out;
+}
+
+.card_container article .bg_card_title:hover {
+    background-color: rgba(0, 0, 0, 1);
+    border: 1px solid var(--bg-navbar-clr);
+}
+
+.card_container article .card_title {
+    color: var(--bg-clr);
+    font-size: .6rem;
+    padding: .5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color .4s ease-out;
+}
+
+/* -----------card text------------- */
+
+section .card_container article .card_introduction1{
+    color: var(--bg-clr);
+    font-size: .9rem;
+    position: absolute;
+    bottom: 3rem;
+    right: 2.5rem;
+    opacity: .8;
+}
+section .card_container article .bg_card_text1 {
+    background-color: var(--bg-clr);
+    position: absolute;
+    bottom: 4.9rem;
+    right: 2.7rem;
+    backdrop-filter: blur(3px);
+    border: 1px solid var(--bg-clr);
+    border-top-left-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    padding: .5rem;
+    backdrop-filter: blur(10px);
+}
+
+.card_container article .card_description1{
+    font-size: .6rem;
+    color: var(--bg-navbar-clr);
+    opacity: .7;
+}
+
+/* --------------Button Card--------------- */
+.card_container article .bg_card_btn {
+    /* position: absolute; */
+    left: 4rem; bottom: 7rem;
+
+}
+
+.card_container article .card_btn {
+    font-size: .8rem;
+    color: var(--bg-clr);
+}
+
+
+
+
+
 
 
 /* Responsive Design For Dekstop And Tablet */
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 768px) {
     .container {
         margin-inline: auto ;
     }
@@ -387,5 +496,8 @@ section .ol_wrapper li.li_dua{
     .btn_toggle,
     .btn_close {
         display: none;
+    }
+    .package_list {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk layar tablet */
     }
 }

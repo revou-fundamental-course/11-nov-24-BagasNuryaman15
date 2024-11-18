@@ -22,9 +22,9 @@ if (btnClose) {
 const logo = document.getElementById('logo');
 
 logo.addEventListener('click', (event) => {
-  event.preventDefault(); // Mencegah perilaku default dari link
+  event.preventDefault();
   window.scrollTo({
-    top: 0, // Gulir ke posisi paling atas
-    behavior: 'smooth' // Animasi halus
+    top: 0, 
+    behavior: 'smooth' 
   });
 });
