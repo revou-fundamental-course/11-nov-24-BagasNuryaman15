@@ -55,6 +55,10 @@ ul li {
 header.header {
     width: 100%;
     background-color: var(--bg-navbar-clr);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
 
 header nav.nav {
@@ -94,7 +98,7 @@ nav .logo span {
     left: -100%;
     top: 0;
     background-color: var(--bg-navbar-clr);
-    width: 100%;
+    width: 50%;
     height: 100%;
     padding: 6rem 3.5rem 4.5rem;
     display: flex;
@@ -174,7 +178,7 @@ header .nav_link span {
 }
 
 .nav_list:has(.nav_link:hover) .nav_link:not(:hover) {
-    opacity: .3;
+    opacity: .5;
 }
 
 /* -----------Btn Group------------ */
@@ -224,6 +228,7 @@ section .title-wrap .greating {
     font-size: 1.1rem;
     color: var(--bg-navbar-clr);
     opacity: .6;
+    color: var(--secondery-text-clr);
 }
 
 /* ----------Main Features And Contact -------------*/
@@ -241,8 +246,10 @@ section.features figure img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 1rem;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6) ;
+    border-radius: 1.4rem;
+    box-shadow: 7px 5px 10px 0 4px 6px rgba(0, 0, 0, 0.1),  
+                0 8px 10px rgba(0, 0, 0, 0.1),
+                0 12px 15px rgba(0, 0, 0, 0.1); 
     max-width: 100%;
     height: 100%;
     object-fit: cover;
@@ -251,15 +258,17 @@ section.features figure img {
 section.features figure q {
     opacity: .7;
     text-transform: capitalize;
+    font-size: 0.8rem;
 }
 
-/* ---------Profile and Features----------- */
-
+/* ----------Profil and Details------------ */
+/* Profile */
 .body_card {
     display: flex;
     gap: 1rem;
     align-items: center;
     margin: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 figure.author {
     flex-shrink: 0;
@@ -271,23 +280,97 @@ section .fcontainer .author .profile_author{
     border-radius: 50%;
     object-fit: cover;
 }
-
-.author_description {
+/* Details */
+.author_container {
+    display: flex;
     flex-direction: column;
 }
 
-.author_description .author_name {
-    font-size: .94rem;
-    margin: 0;
+.author_container h5 {
+    position: relative;
+    overflow: hidden;
+    word-spacing: .1rem;
 }
 
-.author_label {
+.author_container h5 span {
+    display: inline-block;
+    position: relative;
+    transform: translateY(-0%);
+    transition: transform .3s ease-out;
+    cursor: pointer;
+}
+
+.author_container h5 span:hover {
+    transform: translateY(-30%);
+}
+
+.author_container .author_description em {
+    font-size: 0.8rem;
+    opacity: .7;
+}
+
+/* -------Features and Advantage--------- */
+section .features_details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+section .features_details .title_features {
+    width: 100%;
+    text-align: center;
+    color: var(--secondery-text-clr);
+    opacity: .8;
+    margin-bottom: 4rem;
+}
+
+section .features_details .title_features i {
+    font-size: .8rem;
+    color: var(--bg-navbar-clr);
+}
+
+section .ol_wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    gap: 1.7rem;
+    text-align: center;
+    margin-bottom: 20rem;
+    position: relative;
+}
+
+section .ol_wrapper:nth-child(1) {
+    flex: 1;
+}
+section .ol_wrapper:nth-child(2) {
+    flex: 1;
+}
+
+section .ol_wrapper:nth-child(3) {
+    flex: 1;
 }
 
 
+section .ol_wrapper li {
+    background-color: var(--bg-navbar-clr);
+    color: var(--bg-clr);
+    box-sizing: border-box;
+    padding: 1rem;
+    border-radius: 1.3rem;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
 
 
-
+section .ol_wrapper li.li_dua{
+    transform: scale(1.2);
+    background-color: var(--secondery-text-clr) ;
+    color: var(--bg-clr);
+}
 
 
 
