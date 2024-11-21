@@ -85,6 +85,33 @@
                 </ol>
             </article>
         </div>
+        <form action="" id="contact">
+            <h4>Contact Us</h4>
+            <p>Have any question or need assistance? Our Friendly team is just a message away to guide you every step of the way.</p>
+
+            <label for="fullname">
+                Your Fullname:
+                <input type="text" name="fullname" id="fullname" placeholder="Please insert your fullname" required>
+            </label>
+
+            <label for="email">
+                Your Email Address:
+                <input type="email" name="email" id="email" placeholder="yourmail@mail.com" required>
+            </label>
+
+            <label for="preferences">
+                Travel Preferences:
+                <select name="preferences" id="preferences" required>
+                    <option disabled>Selec your travel preferences</option>
+                    <option value="cultural">Cultural Experiences</option>
+                    <option value="adventure">Adventure Activities</option>
+                    <option value="relaxation">Relaxation and Wellness</option>
+                    <option value="family">Family Vacations</option>
+                </select>
+            </label>
+
+            <button type="submit">Send</button>
+        </form>           
         </div>
     </section>
     <!-- Our Packages -->
@@ -160,11 +187,42 @@
             </article>
         </div>
     </section>
-
-    <section class="contact" id="contact">
-        
-    </section>
    </main>
+
+   <footer class="footer" id="footer">
+    <div class="row">
+        <div class="col">
+            <a href="#" class="logo_footer">Doran<sup><i class="ri-plane-line"></i></sup><span class="footer_logo">Fam.</span></a>
+            <p class="marketing">Fly and explore the world with us. find the best offers that are very attractive from us. students don't cry, because this is for all of you.</p>
+        </div>
+        <div class="col">
+            <h4>Office</h4>
+            <p>Garut Pride</p>
+            <p>Blubur Limbangan, Selaawi</p>
+            <p>Tembong, PIN 10090322003, Indonesia</p>
+            <p class="email">@satriadirgantaranuryaman</p>
+            <h5>+62-82115536165</h5>
+        </div>
+        <div class="col">
+            <h4>Link</h4>
+            <ul class="col_list">
+                <li class="col_items">Home</li>
+                <li class="col_items">About</li>
+                <li class="col_items">Services</li>
+                <li class="col_items">Packages</li>
+                <li class="col_items">Contact</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h4>Newsletter</h4>
+            <form class="col_form">
+                <i class="ri-mail-line"></i>
+                <input type="email"  placeholder="Enter your email here" required>
+                <button type="submit" class="col_btn"><i class="ri-arrow-right-line"></i></button>
+            </form>
+        </div>
+    </div>
+   </footer>
     <!-- For JavaScript -->
      <script src="/js/script.js"></script>
 </body>
