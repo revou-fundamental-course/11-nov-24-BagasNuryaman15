@@ -28,13 +28,3 @@ logo.addEventListener('click', (event) => {
     behavior: 'smooth' 
   });
 });
-
-const readMore = document.getElementById('card-btn');
-
-readMore.addEventListener('click', () => {
-  preventDefault()
-  window.scroll({
-    top: 70,
-    behavior: 'smooth'
-  });
-});
